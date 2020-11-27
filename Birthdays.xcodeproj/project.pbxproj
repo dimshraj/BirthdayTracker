@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		32DA6B052570FB420087A4B4 /* BirthdayTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirthdayTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		32DA6B052570FB420087A4B4 /* Birthdays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Birthdays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32DA6B082570FB420087A4B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32DA6B0A2570FB420087A4B4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		32DA6B0C2570FB420087A4B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		32DA6B062570FB420087A4B4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				32DA6B052570FB420087A4B4 /* BirthdayTracker.app */,
+				32DA6B052570FB420087A4B4 /* Birthdays.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,9 +73,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		32DA6B042570FB420087A4B4 /* BirthdayTracker */ = {
+		32DA6B042570FB420087A4B4 /* Birthdays */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 32DA6B1C2570FB460087A4B4 /* Build configuration list for PBXNativeTarget "BirthdayTracker" */;
+			buildConfigurationList = 32DA6B1C2570FB460087A4B4 /* Build configuration list for PBXNativeTarget "Birthdays" */;
 			buildPhases = (
 				32DA6B012570FB420087A4B4 /* Sources */,
 				32DA6B022570FB420087A4B4 /* Frameworks */,
@@ -85,9 +85,9 @@
 			);
 			dependencies = (
 			);
-			name = BirthdayTracker;
+			name = Birthdays;
 			productName = BirthdayTracker;
-			productReference = 32DA6B052570FB420087A4B4 /* BirthdayTracker.app */;
+			productReference = 32DA6B052570FB420087A4B4 /* Birthdays.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -104,7 +104,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 32DA6B002570FB410087A4B4 /* Build configuration list for PBXProject "BirthdayTracker" */;
+			buildConfigurationList = 32DA6B002570FB410087A4B4 /* Build configuration list for PBXProject "Birthdays" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -117,7 +117,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				32DA6B042570FB420087A4B4 /* BirthdayTracker */,
+				32DA6B042570FB420087A4B4 /* Birthdays */,
 			);
 		};
 /* End PBXProject section */
@@ -326,7 +326,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		32DA6B002570FB410087A4B4 /* Build configuration list for PBXProject "BirthdayTracker" */ = {
+		32DA6B002570FB410087A4B4 /* Build configuration list for PBXProject "Birthdays" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32DA6B1A2570FB460087A4B4 /* Debug */,
@@ -335,7 +335,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		32DA6B1C2570FB460087A4B4 /* Build configuration list for PBXNativeTarget "BirthdayTracker" */ = {
+		32DA6B1C2570FB460087A4B4 /* Build configuration list for PBXNativeTarget "Birthdays" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				32DA6B1D2570FB460087A4B4 /* Debug */,
