@@ -7,11 +7,17 @@
 
 import UIKit
 
-class addBirthdayViewController: UIViewController {
+protocol AddBirthdayViewControllerDelegate {
+    
+    func addBirthdayViewController(_ addBirthdayViewController: AddBirthdayViewController, didAddBirthday birthday: Birthday)
+}
+
+class AddBirthdayViewController: UIViewController {
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var birthdatePicker: UIDatePicker!
     
+    var delegate:AddBirthdayViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +28,7 @@ class addBirthdayViewController: UIViewController {
         let firstName = firstNameTextField.text ?? ""
         let birthDate = birthdatePicker.date
         let newBirthDay = Birthday(firstName: firstName, lastName: lastName, birthDate: birthDate)
+        delegate?.addBirthdayViewController(self, didAddBirthday: newBirthDay)
         dismiss(animated: true, completion: nil)
         print("Birthday created")
     }

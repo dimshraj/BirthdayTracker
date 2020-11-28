@@ -11,18 +11,34 @@
         <!--Birthdays-->
         <scene sceneID="eEA-Sc-OZg">
             <objects>
-                <tableViewController id="2jr-ZM-m2L" sceneMemberID="viewController">
+                <tableViewController id="2jr-ZM-m2L" customClass="BirthdaysTableViewController" customModule="Birthdays" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yNj-Ap-nba">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="QWF-0n-MsK">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="birthdayCell" textLabel="SyK-D4-KMb" detailTextLabel="qep-5G-Sz8" style="IBUITableViewCellStyleSubtitle" id="QWF-0n-MsK" customClass="BirthdayTableViewCell" customModule="Birthdays" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QWF-0n-MsK" id="T8N-LE-o47">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SyK-D4-KMb">
+                                            <rect key="frame" x="20" y="10" width="33" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qep-5G-Sz8">
+                                            <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -34,7 +50,7 @@
                     <navigationItem key="navigationItem" title="Birthdays" id="HcQ-kD-THH">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="nqP-Vc-QBk">
                             <connections>
-                                <segue destination="3Qw-0Y-X7i" kind="presentation" id="ivU-6t-MpX"/>
+                                <segue destination="3Qw-0Y-X7i" kind="presentation" modalPresentationStyle="fullScreen" id="ivU-6t-MpX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -46,13 +62,13 @@
         <!--Add Birthday-->
         <scene sceneID="rL4-vg-Yic">
             <objects>
-                <viewController id="3Qw-0Y-X7i" customClass="addBirthdayViewController" customModule="Birthdays" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add Birthday" modalTransitionStyle="flipHorizontal" modalPresentationStyle="fullScreen" hidesBottomBarWhenPushed="YES" id="3Qw-0Y-X7i" customClass="AddBirthdayViewController" customModule="Birthdays" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0dE-rV-XmH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WlJ-6y-NUX">
-                                <rect key="frame" x="39.5" y="40" width="335" height="558.5"/>
+                                <rect key="frame" x="39.5" y="128" width="335" height="558.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gYR-Sl-Pbj">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="68"/>
@@ -157,8 +173,10 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Add Birthday" id="tGp-bG-Gn7"/>
+                    <navigationItem key="navigationItem" title="Add Birthday" largeTitleDisplayMode="always" id="tGp-bG-Gn7"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="birthdatePicker" destination="ePn-pZ-uQ7" id="2vH-3s-Luh"/>
                         <outlet property="firstNameTextField" destination="a8Y-xY-IGL" id="B9A-2S-VU2"/>

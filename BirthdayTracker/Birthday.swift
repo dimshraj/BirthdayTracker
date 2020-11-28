@@ -10,7 +10,14 @@ import Foundation
 class Birthday {
     let firstName: String
     let lastName: String
-    let birthDate: Date
+    var birthDate: Date
+    var birthDay: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        return formatter.string(from: birthDate)
+    }
+    
+    
     
     init(firstName: String, lastName: String, birthDate: Date ) {
         self.firstName = firstName
@@ -18,3 +25,5 @@ class Birthday {
         self.birthDate = birthDate
     }
 }
+
+
