@@ -6,11 +6,10 @@
 //
 
 import UIKit
+import CoreData
 
-class BirthdaysTableViewController: UITableViewController, AddBirthdayViewControllerDelegate {
-    
-    
-
+class BirthdaysTableViewController: UITableViewController {
+   
     var birthdays = [Birthday]() 
     
     override func viewDidLoad() {
@@ -22,8 +21,24 @@ class BirthdaysTableViewController: UITableViewController, AddBirthdayViewContro
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fetchRequest = Birthday.fetchRequest() as NSFetchRequest
+        
+        do {
+            birthdays = try context.fetch(fetchRequest)
+        } catch let error {
+            print("Не удалось загрузить данные из-за ошибки: \(error.localizedDescription).")
+        }
+        tableView.reloadData()
+    }
 
-    // MARK: - Table view data source
+        
+        // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -39,13 +54,19 @@ class BirthdaysTableViewController: UITableViewController, AddBirthdayViewContro
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "birthdayCell", for: indexPath)
         let birthday = birthdays[indexPath.row]
-        cell.textLabel?.text = birthday.firstName + " " + birthday.lastName
-        cell.detailTextLabel?.text = birthday.birthDay
+        
+        cell.textLabel?.text = (birthday.firstName ?? "") + " " + (birthday.lastName ?? "")
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        
+        if let date = birthday.birthDate {
+            cell.detailTextLabel?.text = formatter.string(from: date)
+        } else {
+            cell.detailTextLabel?.text = ""
+        }
+        
         return cell
-    }
-    func addBirthdayViewController(_ addBirthdayViewController: AddBirthdayViewController, didAddBirthday birthday: Birthday) {
-        birthdays.append(birthday)
-        tableView.reloadData()
     }
 
     /*
@@ -86,10 +107,10 @@ class BirthdaysTableViewController: UITableViewController, AddBirthdayViewContro
     
     // MARK: - Navigation
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! AddBirthdayViewController
-        vc.delegate = self
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let vc = segue.destination as! AddBirthdayViewController
+//        vc.delegate = self
+//    }
     
 
 }
