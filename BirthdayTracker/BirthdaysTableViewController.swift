@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 class BirthdaysTableViewController: UITableViewController {
    
@@ -89,6 +90,12 @@ class BirthdaysTableViewController: UITableViewController {
             let context = appDelegate.persistentContainer.viewContext
             context.delete(birthday)
             birthdays.remove(at: indexPath.row)
+            
+            if let identifier = birthday.birthdayId {
+            let center = UNUserNotificationCenter.current()
+                center.removePendingNotificationRequests(withIdentifiers: [identifier])
+            }
+            
             tableView.deleteRows(at:[indexPath], with: .fade)
             do {
                 try context.save()
