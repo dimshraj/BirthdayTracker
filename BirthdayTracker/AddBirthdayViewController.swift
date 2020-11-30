@@ -9,6 +9,7 @@ import UIKit
 
 protocol AddBirthdayViewControllerDelegate {
     
+    
     func addBirthdayViewController(_ addBirthdayViewController: AddBirthdayViewController, didAddBirthday birthday: Birthday)
 }
 
@@ -21,6 +22,8 @@ class AddBirthdayViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        lastNameTextField.delegate = self
+        firstNameTextField.delegate = self
         birthdatePicker.maximumDate = Date()
     }
     @IBAction func savePressed(_ sender: Any) {
@@ -36,4 +39,12 @@ class AddBirthdayViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 }
+extension AddBirthdayViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
+        textField.resignFirstResponder()
+        return true
+    }
+    
+}
+    

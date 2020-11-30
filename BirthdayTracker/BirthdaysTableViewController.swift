@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BirthdaysTableViewController: UITableViewController, AddBirthdayViewControllerDelegate{
+class BirthdaysTableViewController: UITableViewController, AddBirthdayViewControllerDelegate {
     
     
 
@@ -86,7 +86,6 @@ class BirthdaysTableViewController: UITableViewController, AddBirthdayViewContro
     
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! AddBirthdayViewController
         vc.delegate = self
