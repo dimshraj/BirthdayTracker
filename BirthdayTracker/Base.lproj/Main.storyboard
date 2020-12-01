@@ -24,33 +24,31 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lw-Ao-8Vs">
-                                            <rect key="frame" x="15" y="10" width="384" height="46"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="25" id="Vwc-uj-Tfg"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wh2-ZQ-hIs">
-                                            <rect key="frame" x="15" y="66" width="384" height="20"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="20" id="x0h-oW-Lek"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IA2-P8-dRO">
+                                            <rect key="frame" x="10" y="10" width="394" height="76"/>
+                                            <subviews>
+                                                <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3lw-Ao-8Vs">
+                                                    <rect key="frame" x="0.0" y="0.0" width="394" height="24.5"/>
+                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wh2-ZQ-hIs">
+                                                    <rect key="frame" x="0.0" y="55.5" width="394" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="wh2-ZQ-hIs" secondAttribute="trailing" constant="15" id="FB0-AI-cKf"/>
-                                        <constraint firstItem="3lw-Ao-8Vs" firstAttribute="top" secondItem="T8N-LE-o47" secondAttribute="top" constant="10" id="KLh-t3-USq"/>
-                                        <constraint firstAttribute="bottom" secondItem="wh2-ZQ-hIs" secondAttribute="bottom" constant="10" id="V0p-lc-l2s"/>
-                                        <constraint firstAttribute="trailing" secondItem="3lw-Ao-8Vs" secondAttribute="trailing" constant="15" id="eqv-27-cWU"/>
-                                        <constraint firstItem="wh2-ZQ-hIs" firstAttribute="leading" secondItem="T8N-LE-o47" secondAttribute="leading" constant="15" id="fX4-Zp-Q8w"/>
-                                        <constraint firstItem="3lw-Ao-8Vs" firstAttribute="leading" secondItem="T8N-LE-o47" secondAttribute="leading" constant="15" id="hRo-z3-fdN"/>
-                                        <constraint firstItem="wh2-ZQ-hIs" firstAttribute="top" secondItem="3lw-Ao-8Vs" secondAttribute="bottom" constant="10" id="zNO-M7-Ebe"/>
+                                        <constraint firstItem="IA2-P8-dRO" firstAttribute="centerX" secondItem="T8N-LE-o47" secondAttribute="centerX" id="BxU-Q8-6nl"/>
+                                        <constraint firstItem="IA2-P8-dRO" firstAttribute="leading" secondItem="T8N-LE-o47" secondAttribute="leading" constant="10" id="LUR-bi-2QY"/>
+                                        <constraint firstItem="IA2-P8-dRO" firstAttribute="top" secondItem="T8N-LE-o47" secondAttribute="top" constant="10" id="PIp-hh-QxO"/>
+                                        <constraint firstAttribute="bottom" secondItem="IA2-P8-dRO" secondAttribute="bottom" constant="10" id="Xhr-1O-DYY"/>
+                                        <constraint firstAttribute="trailing" secondItem="IA2-P8-dRO" secondAttribute="trailing" constant="10" id="mjn-dg-z9A"/>
+                                        <constraint firstItem="IA2-P8-dRO" firstAttribute="centerY" secondItem="T8N-LE-o47" secondAttribute="centerY" id="pjm-rT-fTO"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
