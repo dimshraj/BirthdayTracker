@@ -14,12 +14,7 @@ class AddBirthdayViewController: UIViewController {
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var birthdatePicker: UIDatePicker!
     
-    var modId = ""
-    var modBirthday:Birthday? {
-        didSet {
-            print(modId)
-        }
-    }
+    var modBirthday:Birthday?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,10 +47,17 @@ class AddBirthdayViewController: UIViewController {
         if let birthday = modBirthday  {
             newBirthday.birthdayId = birthday.birthdayId
             context.delete(birthday)
+            if let identifier = birthday.birthdayId {
+                let center = UNUserNotificationCenter.current()
+                center.removePendingNotificationRequests(withIdentifiers: [identifier])
+            }
+            print("Birthday modified")
         } else {
+            print("Birthday created")
             newBirthday.birthdayId = UUID().uuidString
             if let uniqueId = newBirthday.birthdayId {
                 print("birthdayId: \(uniqueId)")
+                
             }
         }
         
@@ -80,9 +82,8 @@ class AddBirthdayViewController: UIViewController {
             } catch let error {
                 print("can't save with error: \(error.localizedDescription)")
             }
-            
+            print("Birthday saved")
             dismiss(animated: true, completion: nil)
-            print("Birthday created")
         }
     }
     @IBAction func cancellTapped(_ sender: Any) {
