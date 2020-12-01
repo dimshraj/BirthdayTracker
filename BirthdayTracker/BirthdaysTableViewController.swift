@@ -56,18 +56,18 @@ class BirthdaysTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "birthdayCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "birthdayCell", for: indexPath) as! BirthdayTableViewCell
         let birthday = birthdays[indexPath.row]
         
-        cell.textLabel?.text = (birthday.firstName ?? "") + " " + (birthday.lastName ?? "")
+        cell.nameLabel.text = (birthday.firstName ?? "") + " " + (birthday.lastName ?? "")
         
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.MM.yyyy"
         
         if let date = birthday.birthDate {
-            cell.detailTextLabel?.text = formatter.string(from: date)
+            cell.dateLabel.text = formatter.string(from: date)
         } else {
-            cell.detailTextLabel?.text = ""
+            cell.dateLabel.text = ""
         }
         
         return cell
