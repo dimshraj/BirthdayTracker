@@ -10,18 +10,13 @@ import CoreData
 import UserNotifications
 
 class BirthdaysTableViewController: UITableViewController {
-   
+    
     var birthdays = [Birthday]() 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -38,22 +33,39 @@ class BirthdaysTableViewController: UITableViewController {
         } catch let error {
             print("Не удалось загрузить данные из-за ошибки: \(error.localizedDescription).")
         }
-        tableView.reloadData()
+        animateTable()
     }
-
+    func animateTable() {
+        tableView.reloadData()
         
-        // MARK: - Table view data source
-
+        let cells = tableView.visibleCells
+        let tableHeight = tableView.bounds.size.height
+        
+        for cell in cells {
+            cell.transform = CGAffineTransform(translationX: 0, y: tableHeight)
+        }
+        
+        var index = 0
+        for cell in cells {
+            UIView.animate(withDuration: 1.0, delay: 0.05 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: [], animations: {
+                cell.transform = CGAffineTransform(translationX: 0, y: 0)
+            })
+            index += 1
+        }
+    }
+    
+    // MARK: - Table view data source
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return birthdays.count
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "birthdayCell", for: indexPath) as! BirthdayTableViewCell
@@ -72,7 +84,7 @@ class BirthdaysTableViewController: UITableViewController {
         
         return cell
     }
-
+    
     
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -80,7 +92,7 @@ class BirthdaysTableViewController: UITableViewController {
         return true
     }
     
-
+    
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -92,7 +104,7 @@ class BirthdaysTableViewController: UITableViewController {
             birthdays.remove(at: indexPath.row)
             
             if let identifier = birthday.birthdayId {
-            let center = UNUserNotificationCenter.current()
+                let center = UNUserNotificationCenter.current()
                 center.removePendingNotificationRequests(withIdentifiers: [identifier])
             }
             
@@ -106,30 +118,5 @@ class BirthdaysTableViewController: UITableViewController {
         }
     }
     
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    
-    // MARK: - Navigation
-
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let vc = segue.destination as! AddBirthdayViewController
-//        vc.delegate = self
-//    }
-    
-
 }
 
