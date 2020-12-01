@@ -56,6 +56,7 @@
                                 <connections>
                                     <outlet property="dateLabel" destination="wh2-ZQ-hIs" id="DXP-GS-azQ"/>
                                     <outlet property="nameLabel" destination="3lw-Ao-8Vs" id="CB7-Dc-uhJ"/>
+                                    <segue destination="3Qw-0Y-X7i" kind="presentation" identifier="modify" id="GbH-VG-zmx"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -226,6 +227,9 @@
             <point key="canvasLocation" x="-821" y="111"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="GbH-VG-zmx"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

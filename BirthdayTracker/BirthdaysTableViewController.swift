@@ -117,6 +117,27 @@ class BirthdaysTableViewController: UITableViewController {
             
         }
     }
+ 
     
+    // MARK: - Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "modify" {
+            let modify = segue.destination as! AddBirthdayViewController
+            let indexPath = tableView.indexPathForSelectedRow
+
+            if let indexPath = indexPath {
+//                modify.modFirstname = birthdays[indexPath.row].firstName ?? ""
+//                modify.modBirthDate = birthdays[indexPath.row].birthDate ?? Date()
+//                modify.modLastname = birthdays[indexPath.row].lastName ?? ""
+                modify.modId = birthdays[indexPath.row].birthdayId ?? ""
+                modify.modBirthday = birthdays[indexPath.row]
+                
+//                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//                let context = appDelegate.persistentContainer.viewContext
+//                context.delete(birthday)
+                
+            }
+        }
+    }
 }
 
