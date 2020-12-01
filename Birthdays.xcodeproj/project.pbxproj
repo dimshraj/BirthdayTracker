@@ -14,7 +14,6 @@
 		32DA6B132570FB420087A4B4 /* BirthdayTracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6B112570FB420087A4B4 /* BirthdayTracker.xcdatamodeld */; };
 		32DA6B152570FB460087A4B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32DA6B142570FB460087A4B4 /* Assets.xcassets */; };
 		32DA6B182570FB460087A4B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32DA6B162570FB460087A4B4 /* LaunchScreen.storyboard */; };
-		32DA6B24257262070087A4B4 /* Birthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6B23257262070087A4B4 /* Birthday.swift */; };
 		32DA6B2825728D350087A4B4 /* BirthdaysTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6B2725728D350087A4B4 /* BirthdaysTableViewController.swift */; };
 		32DA6B2B257295210087A4B4 /* BirthdayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DA6B2A257295210087A4B4 /* BirthdayTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -29,7 +28,6 @@
 		32DA6B142570FB460087A4B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32DA6B172570FB460087A4B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32DA6B192570FB460087A4B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		32DA6B23257262070087A4B4 /* Birthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Birthday.swift; sourceTree = "<group>"; };
 		32DA6B2725728D350087A4B4 /* BirthdaysTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdaysTableViewController.swift; sourceTree = "<group>"; };
 		32DA6B2A257295210087A4B4 /* BirthdayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,7 +67,6 @@
 				32DA6B0C2570FB420087A4B4 /* AddBirthdayViewController.swift */,
 				32DA6B2A257295210087A4B4 /* BirthdayTableViewCell.swift */,
 				32DA6B2725728D350087A4B4 /* BirthdaysTableViewController.swift */,
-				32DA6B23257262070087A4B4 /* Birthday.swift */,
 				32DA6B0E2570FB420087A4B4 /* Main.storyboard */,
 				32DA6B142570FB460087A4B4 /* Assets.xcassets */,
 				32DA6B162570FB460087A4B4 /* LaunchScreen.storyboard */,
@@ -151,7 +148,6 @@
 			files = (
 				32DA6B2825728D350087A4B4 /* BirthdaysTableViewController.swift in Sources */,
 				32DA6B2B257295210087A4B4 /* BirthdayTableViewCell.swift in Sources */,
-				32DA6B24257262070087A4B4 /* Birthday.swift in Sources */,
 				32DA6B0D2570FB420087A4B4 /* AddBirthdayViewController.swift in Sources */,
 				32DA6B092570FB420087A4B4 /* AppDelegate.swift in Sources */,
 				32DA6B0B2570FB420087A4B4 /* SceneDelegate.swift in Sources */,
